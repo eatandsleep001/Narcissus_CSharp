@@ -79,7 +79,10 @@ namespace NarcissusNamespace
             }
             catch (Exception ex) { }
 
-            result = httpWebResponse.StatusCode;
+            if (httpWebResponse != null)
+            {
+                result = httpWebResponse.StatusCode;
+            }
 
             if (httpWebResponse != null)
             {
@@ -108,8 +111,9 @@ namespace NarcissusNamespace
                     this.success++;
                 }
 
-                Console.WriteLine("Thread {0,3}:\t{1,5}|{2,0}|{3,0}",
-                    threadID, this.success, this.countView, httpStatusCode);
+                Console.WriteLine(
+                    string.Format("Thread {0,3}:", threadID).PadRight(15, ' ') +
+                    string.Format("{0,5}|{1,0}|{2,0}", this.success, this.countView, httpStatusCode));
 
                 if (this.countView >= this.totalView)
                 {
@@ -132,7 +136,7 @@ namespace NarcissusNamespace
             if (threadCount > this.totalView)
                 threadCount = this.totalView;
 
-            Console.Title = this.uri.AbsoluteUri;
+            Console.Title += @" " + this.uri.AbsoluteUri;
 
             for (int i = 0; i < threadCount; i++)
             {
