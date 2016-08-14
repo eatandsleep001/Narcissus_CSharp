@@ -114,7 +114,7 @@ namespace Narcissus
                     this.success++;
                 }
 
-                Console.WriteLine("Thread {0,3}:{1,30}\t|{2,5}|{3,0}|{4,0}",
+                Console.WriteLine("Thread {0,3}:{1,30}\t{2,5}|{3,0}|{4,0}",
                     threadID, shortUrl, this.success, this.countView, httpStatusCode);
 
                 if (this.countView >= this.totalView)
