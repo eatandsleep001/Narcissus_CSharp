@@ -5,12 +5,14 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Narcissus
+namespace NarcissusNamespace
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Console.Title = @"Narcissus";
+
             if (args.Length == 0)
                 DoWithoutArgs();
         }

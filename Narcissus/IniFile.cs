@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Narcissus
+namespace NarcissusNamespace
 {
     class IniFile
     {
