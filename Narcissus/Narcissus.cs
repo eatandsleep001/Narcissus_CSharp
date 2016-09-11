@@ -134,7 +134,9 @@ namespace NarcissusNamespace
             int.TryParse(iniFile.Read(@"Threads", @"Settings"), out threadCount);
 
             if (threadCount > this.totalView)
+            {
                 threadCount = this.totalView;
+            }
 
             Console.Title += @" " + this.uri.AbsoluteUri;
 
